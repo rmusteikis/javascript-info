@@ -1,3 +1,5 @@
+"use strict";
+
 // The "name" property
 
 const sayHi = function () {
@@ -58,7 +60,7 @@ function makeCounter() {
   return counter;
 }
 
-const counter = makeCounter();
+// const counter = makeCounter();
 // console.log(counter());
 // console.log(counter());
 
@@ -81,9 +83,66 @@ let greetPerson = function func(who) {
   }
 };
 
-greetPerson(); // cool
+// greetPerson(); // cool
 
 const welcome = greetPerson;
 greetPerson = null;
 
-welcome(); // works too
+// welcome(); // works too
+
+// task: Set and decrease for counter
+// Modify the code of makeCounter() so that the counter can also decrease and set the number:
+
+// counter() should return the next number (as before).
+// counter.set(value) should set the counter to value.
+// counter.decrease() should decrease the counter by 1.
+// See the sandbox code for the complete usage example.
+
+// P.S. You can use either a closure or the function property to keep the current count. Or write both variants.
+
+function makeCounter() {
+  let count = 0;
+
+  function counter() {
+    return count++;
+  }
+
+  counter.set = (value) => (count = value);
+
+  counter.decrease = () => --count;
+
+  return counter;
+}
+
+const counter = makeCounter();
+
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+// console.log(counter.set(10));
+// console.log(counter.decrease());
+
+// ----------------------------------------------
+// task: Sum with an arbitrary amount of brackets.
+// Write function sum that would work like this:
+// sum(1)(2) == 3;
+// sum(1)(2)(3) == 5; etc...
+// sum(6)(-1)(-2)(-3) == 0; etc...
+
+// does not work in node???
+function multiSum(num) {
+  let sum = 0;
+
+  function addToSum(num) {
+    if (isFinite(num)) sum += +num;
+    return addToSum;
+  }
+
+  addToSum[Symbol.toPrimitive] = () => sum;
+  addToSum.valueOf = () => sum;
+  addToSum.toString = () => sum;
+
+  return addToSum(num);
+}
+
+// console.log(multiSum(1)(2));
