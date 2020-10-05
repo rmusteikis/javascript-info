@@ -11,3 +11,17 @@ const sayHi = new Function("console.log('Hello')");
 // let str = ... receive code from a server dynamically ...
 // let func = new Function(str);
 // func();
+
+// ------------------------------
+// CLOSURE
+// ------------------------------
+// new Function cannot access outer variables!
+function getFunc() {
+  let value = "test";
+
+  let func = new Function("console.log(value)");
+
+  return func;
+}
+
+// getFunc()(); // error: value is not defined
