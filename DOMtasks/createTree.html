@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create a Tree</title>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script>
+      let data = {
+        Fish: {
+          trout: {},
+          salmon: {},
+        },
+
+        Tree: {
+          Huge: {
+            sequoia: {},
+            oak: {},
+          },
+          Flowering: {
+            "apple tree": {},
+            magnolia: {},
+          },
+        },
+      };
+
+      let container = document.getElementById("container");
+
+      function createTree(container, obj) {
+        container.innerHTML = createTreeText(obj);
+      }
+
+      function createTreeText(obj) {
+        let ul;
+        let li = "";
+        for (let item in obj) {
+          li += "<li>" + item + createTreeText(obj[item]) + "</li>";
+        }
+
+        if (li) {
+          ul = "<ul>" + li + "</ul>";
+        }
+        return ul || "";
+      }
+
+      createTree(container, data); // creates the tree in the container
+    </script>
+  </body>
+</html>

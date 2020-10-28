@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th {
+  background-color: #ddd;
+}
+
+tr {
+}
+
+td {
+  border: 1px solid black;
+  padding: 5px;
+}

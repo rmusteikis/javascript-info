@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select and count each ul items</title>
+  </head>
+  <body>
+    <!-- <a name="list">the list</a> -->
+    <!-- <ul> -->
+      <!-- <li><a href="http://google.com">http://google.com</a></li> -->
+      <!-- <li><a href="/tutorial">/tutorial.html</a></li> -->
+      <!-- <li><a href="local/path">local/path</a></li> -->
+      <!-- <li><a href="ftp://ftp.com/my.zip">ftp://ftp.com/my.zip</a></li> -->
+      <!-- <li><a href="http://nodejs.org">http://nodejs.org</a></li> -->
+      <!-- <li><a href="http://internal.com/test">http://internal.com/test</a></li> -->
+    <!-- </ul> -->
+
+    <!-- <script src='./basicDomNodeProperties.js'> -->
+      <!-- // setting style for a single link -->
+<!-- //      let link = document.querySelectorAll("[href]"); -->
+<!-- // -->
+<!-- //      for (let item of link) { -->
+<!-- //        let attr = item.getAttribute("href"); -->
+<!-- // -->
+<!-- //        if (attr.includes("://") && !attr.includes("http://internal.com")) { -->
+<!-- //          item.style.color = "orange"; -->
+<!-- //        } -->
+<!-- //      } -->
+
+      <!-- // look for all links that have :// in href -->
+      <!-- // but href doesn't start with http://internal.com -->
+      <!-- // is it ninja code??? -->
+      <!-- //    let selector = 'a[href*="://"]:not([href^="http://internal.com"])'; -->
+      <!-- //    let links = document.querySelectorAll(selector); -->
+
+      <!-- //links.forEach((link) => (link.style.color = "orange")); -->
+    <!-- </script> -->
+    <ul>
+    <li>Animals
+    <ul>
+    <li>Mammals
+    <ul>
+    <li>Cows</li>
+    <li>Donkeys</li>
+    <li>Dogs</li>
+    <li>Tigers</li>
+    </ul>
+    </li>
+    <li>Other
+    <ul>
+    <li>Snakes</li>
+    <li>Birds</li>
+    <li>Lizards</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    <li>Fishes
+    <ul>
+    <li>Aquarium
+    <ul>
+    <li>Guppy</li>
+    <li>Angelfish</li>
+    </ul>
+    </li>
+    <li>Sea
+    <ul>
+    <li>Sea trout</li>
+    </ul>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <script src="./basicDomNodeProperties.js"></script>
+  </body>
+</html>
